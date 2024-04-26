@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F0F2F5;
+}
+
+#root {
+    width: 1270px;
+    margin: 0 auto;
+}
+
+nav {
+    padding: 25px 0;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+#paragraph {
+    padding-left: 25px;
+    /* Adjust the padding as needed */
+}

@@ -4,7 +4,7 @@ import LoginForm from './LoginForm'
 
 const RegLog = ({ updateUser }) => {
     return (
-        <div>
+        <div className='container'>
             {/* row offset-1 */}
             <div className="d-flex justify-content-evenly">
                 <RegisterForm onRegister={updateUser} />

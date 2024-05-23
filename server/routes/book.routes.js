@@ -5,6 +5,9 @@ module.exports = (app) => {
     // GET ALL BOOKS
     app.get('/api/books', BookController.getAllBooks);
 
+    // GET USER ALL BOOKS
+    app.get('/api/books/user/:userId', BookController.getUserAllBooks);
+
     // GET ONE BOOK
     app.get('/api/books/:id', BookController.getOneBook);
 

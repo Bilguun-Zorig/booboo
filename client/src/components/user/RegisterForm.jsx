@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
-import UserContext from '../context/UserContext'
+import UserContext from '../../context/UserContext'
 
 const RegisterForm = () => {
 
@@ -56,7 +56,7 @@ const RegisterForm = () => {
             });
     }
     return (
-        <div className="col-4 m-3">
+        <div className="container col-4 m-3">
             <h1>Register</h1>
             <form onSubmit={submitHandler}>
                 <div className={`form-group ${errorMessages.firstName ? '' : 'pb-3'}`}>

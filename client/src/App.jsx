@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import Nav from './components/Nav'
+import Nav from './components/book/Nav'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import DisplayAllBooks from './components/DisplayAllBooks'
-import BookForm from './components/BookForm'
-import DisplayOneBook from './components/DisplayOneBook'
-import EditBook from './components/EditBook'
-import RegisterForm from './components/RegisterForm'
+import DisplayAllBooks from './components/book/DisplayAllBooks'
+import BookForm from './components/book/BookForm'
+import EditBook from './components/book/EditBook'
 import NotFound from './components/NotFound'
-import LoginForm from './components/LoginForm'
-import RegLog from './components/RegLog'
+import LoginForm from './components/user/LoginForm'
+import RegLog from './components/user/RegLog'
 import UserContext from './context/UserContext'
-import SearchBook from './components/SearchBook'
+import SearchBook from './components/book/SearchBook'
+import MyBooks from './components/book/MyBooks'
+import SingleBookAndComments from './components/SingleBookAndComments'
+
+// import CommentForm from './components/CommentForm'
 // import { UserProvider } from './context/UserContext';
 function App() {
 
@@ -41,12 +43,16 @@ function App() {
           <Routes>
             <Route path='/' element={<DisplayAllBooks />} />
             <Route path='/books/create' element={<BookForm setLoggedInUser={setLoggedInUser} />} />
-            <Route path='/books/:id' element={<DisplayOneBook />} />
+
+            <Route path='/books/my' element={<MyBooks/>} />
+            <Route path='/books/:id' element={<SingleBookAndComments />} />
+
             <Route path='/books/edit/:id' element={<EditBook />} />
             <Route path='/login' element={<LoginForm />} />
             {/* <Route path='/register' element={<RegisterForm />} /> */}
             <Route path='/reg/log' element={<RegLog />} />
             <Route path='/books/search' element={<SearchBook searchTerm={searchTerm} />} />
+            {/* <Route path='/comment/add' element={<CommentForm/>}/> */}
 
             {/* catch out at the end of all route */}
             <Route path='*' element={<NotFound />} />

@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import UserContext from '../context/UserContext'
+import UserContext from '../../context/UserContext'
 
 
 const BookForm = () => {
@@ -51,9 +51,6 @@ const BookForm = () => {
                 coverImageUrl: book.coverImageUrl,
                 creator: userId
             };
-
-            // if (formValidations(book)) {
-            // it looks for the end point (show routes file in server) 
             axios.post('http://localhost:8000/api/books', bookData, { withCredentials: true })
                 .then(res => {
                     console.log(res.data)
@@ -72,7 +69,7 @@ const BookForm = () => {
                         coverImageUrl: ""
                     })
                     console.log("NEW BOOK*****", book)
-
+                    navigate('/')
                 })
                 .catch(err => {
                     console.log(err.response.data.errors)
@@ -86,7 +83,8 @@ const BookForm = () => {
     }
 
     return (
-        <div>
+        <div className='container'>
+            <div className="row">
             {loggedInUser && loggedInUser._id ? < h1 >{loggedInUser.firstName}'s book</h1> : null}
             <form className="col-md-4 offset-4" onSubmit={submitHandler}>
                 <h1 className="mb-3 text-primary">Add a Book</h1>
@@ -127,9 +125,8 @@ const BookForm = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="aboutBook" className="form-label">About the book</label>
-                    {/* <input type="text" className="form-control" id="aboutBook" name="aboutBook" value={book.aboutBook} onChange={changeHandler} /> */}
-                    <textarea type="text" className="form-control" id="aboutBook" name="aboutBook" value={book.aboutBook} onChange={changeHandler} style={{ height: "100px" }}></textarea>
-                    {errors.aboutBook ? <p className="text-danger">{errors.aboutBook.message}</p> : null}
+                    <textarea type="text" className="form-control" id="aboutBook" name="aboutBook" value={book.aboutBook} onChange={changeHandler} style={{ height: "100px", resize: "none" }}></textarea>
+                    {/* {errors.aboutBook ? <p className="text-danger">{errors.aboutBook.message}</p> : null} */}
                 </div>
 
                 <div className="mb-3">
@@ -141,6 +138,7 @@ const BookForm = () => {
                     <button type="submit" className="btn btn-primary">Create</button>
                 </div>
             </form>
+            </div>
         </div>
     )
 }

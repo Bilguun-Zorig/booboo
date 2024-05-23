@@ -17,17 +17,6 @@ const SearchBook = () => {
     const searchTerm = query.get('search'); // Get the search term from URL query parameters
 
 
-
-
-
-    // useEffect(() => {
-    //     axios.get('http://localhost:8000/api/books')
-    //         .then(res => {
-    //             setBooks(res.data);
-    //         })
-    //         .catch(err => console.log(err));
-    // }, [books]);
-
     useEffect(() => {
         axios.get('http://localhost:8000/api/books')
             .then(res => {
@@ -70,14 +59,14 @@ const SearchBook = () => {
         navigate(`/books/${e.target.value}`)
     };
     return (
-        <div>
+        <div className='container'>
             {
                 searchBy && <h1>{searchBy} : {filteredBooks.length}</h1>
             }
             {
                 filteredBooks.length === 0 ? <h1>404 Not Found</h1> :
 
-                    <div className="row row-cols-1 row-cols-md-4 g-4 m-5">
+                    <div className="row row-cols-md-4 g-4 m-5">
                         {filteredBooks.map(book => (
                             <div key={book._id} className="col">
                                 <div className="card h-100">

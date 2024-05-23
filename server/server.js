@@ -15,6 +15,7 @@ app.use(express.json(), express.urlencoded({ extended: true }));
 
 require('./routes/user.routes')(app);
 require('./routes/book.routes')(app);
+require('./routes/comment.routes')(app);
 
 
 app.listen(port, () => console.log(`Listening to port ${port}`));

@@ -42,12 +42,17 @@ const BookSchema = new mongoose.Schema({
     //stores the ID of the user who created it.
     creator: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
     coverImageUrl: {
         type: String,
         required: [true, "Cover image URL is required"]
-    }
+    },
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
+    }]
 },
     { timestamps: true });
 

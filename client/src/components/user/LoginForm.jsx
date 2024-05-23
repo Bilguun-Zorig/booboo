@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import axios from 'axios'
-import UserContext from '../context/UserContext'
-import BooBooLogo from '../images/BooBooLogo.png';
+import UserContext from '../../context/UserContext'
+import BooBooLogo from'../../images/BooBooLogo.png'
 
 const LoginForm = ({ isCompact = false }) => {
     const { saveLoggedInUser } = useContext(UserContext);
@@ -39,7 +39,7 @@ const LoginForm = ({ isCompact = false }) => {
     }
 
     return (
-        <div className={`d-flex justify-content-evenly ${formClass}`} >
+        <div className={`container d-flex justify-content-evenly ${formClass}`} >
             {
                 location.pathname !== '/reg/log' && (
                     <div>
@@ -65,8 +65,6 @@ const LoginForm = ({ isCompact = false }) => {
                 </form>
             </div>
         </div >
-
-
     )
 }
 

@@ -39,22 +39,6 @@ module.exports = {
                 res.status(500).json(err);
             })
     },
-    // createBook: (req, res) => {
-    //     // Check if user is authenticated
-    //     if (!req.user || !req.user._id) {
-    //         return res.status(401).json({ message: "Unauthorized from API" });
-    //     }
-
-    //     // User is authenticated, proceed with creating the book
-    //     Book.create({ ...req.body, creator: req.user._id }) // Add the creator field to the book
-    //         .then((newBook) => {
-    //             console.log(newBook);
-    //             res.json(newBook);
-    //         })
-    //         .catch((err) => {
-    //             res.status(500).json(err);
-    //         })
-    // },
 
     // UPDATE ONE BOOK
     updateBook: (req, res) => {
@@ -79,6 +63,18 @@ module.exports = {
             .then((deletedBook) => {
                 console.log(deletedBook);
                 res.json(deletedBook);
+            })
+            .catch((err) => {
+                res.status(500).json(err);
+            })
+    },
+
+    getUserAllBooks: (req, res) => {
+        const userId = req.params.userId;
+        Book.find({ creator: userId })
+            .then((userBooks) => {
+                console.log(userBooks);
+                res.json(userBooks);
             })
             .catch((err) => {
                 res.status(500).json(err);

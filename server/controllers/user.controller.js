@@ -77,20 +77,6 @@ module.exports = {
         // res.clearCookie('usertoken');
         // res.sendStatus(200)
         res.status(200).clearCookie('usertoken').json({ message: "You have logged out successfully!" })
-    },
-
-    //Get All Users
-    // findAllUsers: (req, res) => {
-    //     User.find()
-    //         .then((allUsers) => {
-    //             console.log(allUsers);
-    //             res.json({ users: allUsers });
-    //         }
-    //         )
-    //         .catch((err) => {
-    //             res.status(500).json(err);
-    //         }
-    //         )
-    // }
+    }
 
 }

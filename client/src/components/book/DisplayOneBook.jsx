@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
-import UserContext from '../context/UserContext'
+import UserContext from '../../context/UserContext'
 
 
 const DisplayOneBook = () => {
@@ -35,7 +35,7 @@ const DisplayOneBook = () => {
     }
 
     return (
-        <div className='col-md-6 offset-3'>
+        <div className='container col-md-6 offset-3'>
             <h1 className='text-primary'>{book.title}</h1>
             <div className='d-flex pb-4'>
                 <div>

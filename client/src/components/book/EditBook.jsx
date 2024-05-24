@@ -57,10 +57,9 @@ const EditBook = () => {
     }
 
     return (
-        <div className='container m-5'>
-            {loggedInUser && loggedInUser._id ? < h1 >{loggedInUser.firstName}'s book</h1> : null}
+        <div className='container'>
+            {loggedInUser && loggedInUser._id ? <h3>{loggedInUser.firstName}'s book</h3> : null}
             <form className="col-md-4 offset-4" onSubmit={submitHandler}>
-                <h1 className="mb-3 text-primary">Update a Book</h1>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" className="form-control" id="title" name="title" value={book.title} onChange={changeHandler} />

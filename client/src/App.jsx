@@ -13,8 +13,6 @@ import SearchBook from './components/book/SearchBook'
 import MyBooks from './components/book/MyBooks'
 import SingleBookAndComments from './components/SingleBookAndComments'
 
-// import CommentForm from './components/CommentForm'
-// import { UserProvider } from './context/UserContext';
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -43,17 +41,12 @@ function App() {
           <Routes>
             <Route path='/' element={<DisplayAllBooks />} />
             <Route path='/books/create' element={<BookForm setLoggedInUser={setLoggedInUser} />} />
-
             <Route path='/books/my' element={<MyBooks/>} />
             <Route path='/books/:id' element={<SingleBookAndComments />} />
-
             <Route path='/books/edit/:id' element={<EditBook />} />
             <Route path='/login' element={<LoginForm />} />
-            {/* <Route path='/register' element={<RegisterForm />} /> */}
             <Route path='/reg/log' element={<RegLog />} />
             <Route path='/books/search' element={<SearchBook searchTerm={searchTerm} />} />
-            {/* <Route path='/comment/add' element={<CommentForm/>}/> */}
-
             {/* catch out at the end of all route */}
             <Route path='*' element={<NotFound />} />
           </Routes>

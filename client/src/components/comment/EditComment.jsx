@@ -48,7 +48,7 @@ const EditComment = ({commentId, closeEditor, onUpdateComment}) => {
         {
                 loggedInUser._id ? (
                     <form className="col-6" onSubmit={submitHandler}>
-                        <h1 className="mb-3 text-primary">Edit Comment</h1>
+                        <h4 className="mb-3">Edit Comment</h4>
                         <div className="mb-3">
                             <textarea 
                                 type="text" 

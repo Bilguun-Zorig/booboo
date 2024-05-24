@@ -23,7 +23,7 @@ const DisplayAllComments = ({ comments, onEditComment, onDeleteComment }) => {
 
 return (
     <div className='container'>
-        <h1 className='mb-3'>Comments</h1>
+        {comments.length > 0 && <h4 className='mb-3'>Comments</h4>}
             {
                 comments.map((comment) =>(
                     <div key={comment._id} className='row d-flex justify-content-center'>

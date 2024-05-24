@@ -26,8 +26,7 @@ const DisplayAllBooks = () => {
     return (
         <div className='container'>
             <div className="row">
-                <h1 className='text-primary'>Booklist</h1>
-                {loggedInUser && loggedInUser._id ? < h1 > Welcome, {loggedInUser.firstName}!</h1> : null}
+                {loggedInUser && loggedInUser._id ? <h3> Welcome, {loggedInUser.firstName}</h3> : null}
                 <div className="row row-cols-md-4 g-4">
                     {books.map((book, i) => (
                         <div key={book._id} className="col">

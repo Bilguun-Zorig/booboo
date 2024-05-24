@@ -8,10 +8,10 @@ body {
     background-color: #F0F2F5;
 }
 
-#root {
+/* #root {
     width: 1270px;
     margin: 0 auto;
-}
+} */
 
 nav {
     padding: 25px 0;
@@ -24,4 +24,8 @@ nav {
 #paragraph {
     padding-left: 25px;
     /* Adjust the padding as needed */
+}
+
+.container{
+    margin-bottom: 45px;
 }

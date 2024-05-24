@@ -23,13 +23,13 @@ const MyBooks = () => {
     }, [loggedInUser, navigate]);
 
     const clickHandler = (e) => {
-        navigate(`/books/${e.target.value}`)
+        navigate(`/books/${e.target.value}`, { state: { fromMyBooks: true } });
     }
 
-  return (
-    <div className='container'>
+    return (
+        <div className='container'>
             <div className="row">
-                {loggedInUser && loggedInUser._id ? < h1 className='text-primary'>{loggedInUser.firstName}' Books</h1> : null}
+                {loggedInUser && loggedInUser._id ? <h3>{loggedInUser.firstName}' Books</h3> : null}
                 <div className="row row-cols-md-4 g-4">
                     {books.map((book, i) => (
                         <div key={book._id} className="col">
@@ -48,8 +48,8 @@ const MyBooks = () => {
                     ))}
                 </div>
             </div>
-        </div >
-  )
+        </div>
+    )
 }
 
 export default MyBooks

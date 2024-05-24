@@ -53,7 +53,7 @@ const CommentForm = ({addComment}) =>{
                 {
                     loggedInUser._id ? (
                         <form className="col-6" onSubmit={submitHandler}>
-                            <h1 className="mb-3 text-primary">New Comment</h1>
+                            <h4 className="mb-3">Comment</h4>
                             <div className="mb-3">
                                 <textarea 
                                     type="text" 
@@ -62,7 +62,7 @@ const CommentForm = ({addComment}) =>{
                                     name="comment" 
                                     value={comment.comment} 
                                     onChange={changeHandler} 
-                                    style={{ height: "100px", resize: "none"}} 
+                                    style={{ height: "px", resize: "none"}} 
                                     placeholder={`Comment as ${loggedInUser.firstName}`}
                                 ></textarea>
                             </div>

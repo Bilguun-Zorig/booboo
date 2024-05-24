@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../../context/UserContext'
+import BooBooLogo from'../../images/BooBooLogo.png'
 
 const Nav = ({ handleLogout, setSearchTerm }) => {
     const { loggedInUser } = useContext(UserContext)
@@ -32,10 +33,13 @@ const Nav = ({ handleLogout, setSearchTerm }) => {
     };
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
-                <nav className='d-flex justify-content-between align-items-center'>
-                    <Link to='/' className="nav-link active"><h1>BooBoo</h1></Link>
+                <nav className='d-flex justify-content-around align-items-center'>
+                    <Link to='/' className="nav-link active d-flex"> 
+                        <img src={BooBooLogo} alt="BooBoo Logo" style={{ width: "48px", height: '48px' }}/> 
+                        <h1>BooBoo</h1>
+                    </Link>
                     <form className="d-flex" role="search" onSubmit={handleSubmit}>
                         <input
                             className="form-control me-3"
@@ -44,9 +48,9 @@ const Nav = ({ handleLogout, setSearchTerm }) => {
                             aria-label="Search"
                             value={searchInput}
                             onChange={handleChange}
-                            style={{ width: "350px" }}
+                            style={{ width: "300px" }}
                         />
-                        <button className="btn btn-outline-success" type="submit" style={{ width: "150px" }}>Search</button>
+                        <button className="btn btn-outline-primary" type="submit" style={{ width: "150px" }}>Search</button>
                     </form>
                     <div className="d-flex justify-content-around w-30" >
                         <nav className="navbar navbar-expand-lg ">
@@ -63,7 +67,7 @@ const Nav = ({ handleLogout, setSearchTerm }) => {
                                     </li>
 
                                     <div className="dropdown">
-                                        <button className="btn btn-secondary dropdown-toggle" type='button' data-bs-toggle='dropdown'>
+                                        <button className="btn btn-primary dropdown-toggle" type='button' data-bs-toggle='dropdown'>
                                             Menu
                                         </button>
                                         <ul className="dropdown-menu">

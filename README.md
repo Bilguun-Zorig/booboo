@@ -3,6 +3,8 @@ Welcome to the BooBoo Book List App! This web application, built on the MERN sta
 
 ## Demo video: https://youtu.be/0jqimpqrx2w
 
+![Home Page](https://github.com/Bilguun-Zorig/booboo/assets/111012530/089f0819-0fe9-4b6d-99ff-652282ce5e85)
+
 ## Features
 - Register & Login
 - CRUD 
